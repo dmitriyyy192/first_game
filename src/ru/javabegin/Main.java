@@ -230,49 +230,67 @@ public class Main {
             boolean be = true;
             switch (number - 1) {
                 case 0:
-                    if(playing_board[0][0] == 'O' || playing_board[0][0] == 'X') {
+                    if(playing_board[0][0] != ' ') {
                         be = false;
                         break;
+                    } else {
+                        return true;
                     }
                 case 1:
-                    if(playing_board[0][2] == 'O' || playing_board[0][2] == 'X') {
+                    if(playing_board[0][2] != ' ') {
                         be = false;
                         break;
+                    } else {
+                        return true;
                     }
                 case 2:
-                    if(playing_board[0][4] == 'O' || playing_board[0][4] == 'X') {
+                    if(playing_board[0][4] != ' ') {
                         be = false;
                         break;
+                    } else {
+                        return true;
                     }
                 case 3:
-                    if(playing_board[2][0] == 'O' || playing_board[2][0] == 'X') {
+                    if(playing_board[2][0] != ' ') {
                         be = false;
                         break;
+                    } else {
+                        return true;
                     }
                 case 4:
-                    if(playing_board[2][2] == 'O' || playing_board[2][2] == 'X') {
+                    if(playing_board[2][2] != ' ') {
                         be = false;
                         break;
+                    } else {
+                        return true;
                     }
                 case 5:
-                    if(playing_board[2][4] == 'O' || playing_board[2][4] == 'X') {
+                    if(playing_board[2][4] != ' ') {
                         be = false;
                         break;
+                    } else {
+                        return true;
                     }
                 case 6:
-                    if(playing_board[4][0] == 'O' || playing_board[4][0] == 'X') {
+                    if(playing_board[4][0] != ' ') {
                         be = false;
                         break;
+                    } else {
+                        return true;
                     }
                 case 7:
-                    if(playing_board[4][2] == 'O' || playing_board[4][2] == 'X') {
+                    if(playing_board[4][2] != ' ') {
                         be = false;
                         break;
+                    } else {
+                        return true;
                     }
                 case 8:
-                    if(playing_board[4][4] == 'O' || playing_board[4][4] == 'X') {
+                    if(playing_board[4][4] != ' ') {
                         be = false;
                         break;
+                    } else {
+                        return true;
                     }
             }
             return be;
@@ -305,6 +323,7 @@ public class Main {
                     toe.user_move(number);
                     if(toe.getCount() <= 5) {
                         if(toe.is_win()) {
+                            toe.print_board();
                             System.out.println(ANSI_PURPLE + "Вы победили!" + ANSI_RESET);
                             break;
                         }
@@ -312,6 +331,7 @@ public class Main {
                     toe.computer_move();
                     if(toe.getCount() <= 5) {
                         if(toe.is_win()) {
+                            toe.print_board();
                             System.out.println(ANSI_PURPLE + "Вы проиграли:(" + ANSI_RESET);
                             break;
                         }
@@ -328,6 +348,7 @@ public class Main {
                     toe.computer_move();
                     if(toe.getCount() <= 5) {
                         if(toe.is_win()) {
+                            toe.print_board();
                             System.out.println(ANSI_PURPLE + "Вы проиграли:(" + ANSI_RESET);
                             break;
                         }
@@ -340,6 +361,7 @@ public class Main {
                     toe.user_move(m_number);
                     if(toe.getCount() <= 5) {
                         if(toe.is_win()) {
+                            toe.print_board();
                             System.out.println(ANSI_PURPLE + "Вы победили!" + ANSI_RESET);
                             break;
                         }
